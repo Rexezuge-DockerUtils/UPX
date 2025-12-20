@@ -1,4 +1,4 @@
-FROM debian:12
+FROM debian:stable
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends build-essential curl unzip zlib1g-dev libpcre2-dev perl ca-certificates
