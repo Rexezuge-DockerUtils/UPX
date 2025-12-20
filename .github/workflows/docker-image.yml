@@ -30,13 +30,11 @@ jobs:
         IMAGE_NAME=rexezugedockerutils/upx
         GIT_SHA=$(echo "${{ github.sha }}" | cut -c1-7)
         UNIX_TS=$(date +%s)
-
         if [[ "${{ github.event_name }}" == "schedule" ]]; then
           TAG="auto-${UNIX_TS}"
         else
           TAG="${GIT_SHA}"
         fi
-
         echo "image_name=${IMAGE_NAME}" >> "$GITHUB_OUTPUT"
         echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
 
