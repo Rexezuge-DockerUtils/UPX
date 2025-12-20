@@ -47,5 +47,5 @@ jobs:
         platforms: linux/amd64,linux/arm64
         push: true
         tags: |
-          ${{ steps.vars.outputs.image_name }}:${{ steps.vars.outputs.commit_sha }}
+          ${{ steps.vars.outputs.image_name }}:${{ steps.vars.outputs.tag }}
           ${{ steps.vars.outputs.image_name }}:latest
