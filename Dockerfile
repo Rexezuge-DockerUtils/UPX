@@ -3,7 +3,7 @@ FROM debian:stable
 RUN apt-get update \
  && apt-get install -y --no-install-recommends build-essential curl unzip zlib1g-dev libpcre2-dev perl ca-certificates
 
-ENV UPX_VERSION=5.0.2
+ENV UPX_VERSION=5.1.1
 
 RUN ARCH=$(dpkg --print-architecture) \
  && if [ "$ARCH" = "amd64" ]; then UPX_ARCH="amd64_linux"; \
