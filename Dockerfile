@@ -1,7 +1,7 @@
 FROM debian:stable
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends build-essential curl unzip zlib1g-dev libpcre2-dev perl ca-certificates
+ && apt-get install -y --no-install-recommends build-essential curl unzip zlib1g-dev libpcre2-dev perl ca-certificates jq
 
 RUN ARCH=$(dpkg --print-architecture) \
  && if [ "$ARCH" = "amd64" ]; then UPX_ARCH="amd64_linux"; \
