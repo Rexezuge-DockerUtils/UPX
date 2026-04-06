@@ -9,7 +9,7 @@ RUN ARCH=$(dpkg --print-architecture) \
     else echo "Unsupported architecture: $ARCH" && exit 1; fi \
  && UPX_VERSION=$(curl -s https://api.github.com/repos/upx/upx/releases/latest | jq -r .tag_name) \
  && echo "Latest UPX version: $UPX_VERSION" \
- && curl -L -o /tmp/upx.tar.xz https://github.com/upx/upx/releases/download/${UPX_VERSION}/upx-${UPX_VERSION}-${UPX_ARCH}.tar.xz \
+ && curl -L -o /tmp/upx.tar.xz https://github.com/upx/upx/releases/download/${UPX_VERSION}/upx-${UPX_VERSION#v}-${UPX_ARCH}.tar.xz \
  && tar -xf /tmp/upx.tar.xz -C /tmp \
  && mv /tmp/upx-${UPX_VERSION}-${UPX_ARCH}/upx /usr/local/bin/upx
 
