@@ -11,7 +11,7 @@ RUN ARCH=$(dpkg --print-architecture) \
  && echo "Latest UPX version: $UPX_VERSION" \
  && curl -L -o /tmp/upx.tar.xz https://github.com/upx/upx/releases/download/${UPX_VERSION}/upx-${UPX_VERSION#v}-${UPX_ARCH}.tar.xz \
  && tar -xf /tmp/upx.tar.xz -C /tmp \
- && mv /tmp/upx-${UPX_VERSION}-${UPX_ARCH}/upx /usr/local/bin/upx
+ && mv /tmp/${UPX_VERSION#v}-${UPX_ARCH}/upx /usr/local/bin/upx
 
 FROM scratch
 
